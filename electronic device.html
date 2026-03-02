@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics Devices - MD | Mwiba Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5558195806408630"
+     crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0e0e0 0%, #c5c5c5 100%);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(to right, #2c3e50, #1a2530);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #e67e22;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            background: #e67e22;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 1px solid transparent;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: #e67e22;
+        }
+
+        /* Main content layout */
+        .content-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            gap: 30px;
+        }
+
+        .main-content {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar {
+            width: 380px;
+            flex-shrink: 0;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: #2c3e50;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .page-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #e67e22;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Product Grid */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 3px solid #e67e22;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .product-info p {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: #e67e22;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(to right, #25D366, #128C7E);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            border: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Description Section */
+        .description {
+            margin: 3rem 0;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .description h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .description ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .description li {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(to right, #2c3e50, #1a2530);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer p {
+            margin: 0.8rem 0;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 8px;
+            color: white;
+            font-size: 1.4rem;
+            line-height: 45px;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #e67e22;
+            transform: translateY(-5px);
+        }
+
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background: linear-gradient(to bottom, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        /* Ad Container Styles */
+        .ad-container {
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            margin-bottom: 30px;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .ad-container h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .ad-disclaimer {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 1024px) {
+            .content-container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                order: -1;
+                margin-bottom: 30px;
+            }
+            
+            .ad-container {
+                position: static;
+                max-width: 100%;
+                margin: 20px auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0.8rem;
+                margin-top: 1.5rem;
+            }
+            
+            .nav.active {
+                display: flex;
+            }
+            
+            .main-content {
+                padding: 1.5rem;
+            }
+            
+            .products {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            /* Adjust vertical ad for mobile */
+            .sidebar .ad-container ins {
+                width: 100%;
+                max-width: 360px;
+                height: 600px;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            /* Further adjust vertical ad for small mobile */
+            .sidebar .ad-container ins {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-paint-brush"></i>
+                <span>Mwiba Designs</span>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav" id="mainNav">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about-us.html"><i class="fas fa-users"></i> About Us</a>
+                <a href="graphics design.html"><i class="fas fa-palette"></i> Graphics</a>
+                <a href="electronic device.html"><i class="fas fa-laptop"></i> Electronics</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="content-container">
+        <div class="main-content">
+            <h1 class="page-title">Electronics Devices</h1>
+            
+            <div class="description">
+                <p>Upgrade your tech setup with our high-quality electronics products. We provide a wide range of devices and accessories to meet all your computing and gaming needs.</p>
+                
+                <h2>Our Products</h2>
+                <p>Browse our selection of premium electronics:</p>
+            </div>
+            
+            <div class="products">
+                <div class="product-card">
+                    <img src="c1.jpg" 
+                         alt="Gaming Controllers" 
+                         class="product-image">
+                    <div class="product-info">
+                        <h3>Gaming Controllers</h3>
+                        <p>High-performance game pads for PC and console gaming with precision controls.</p>
+                        <div class="product-price">From $29.99</div>
+                        <a href="https://wa.me/255753704585?text=I'm%20interested%20in%20your%20gaming%20controllers" 
+                           class="whatsapp-btn" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> Inquire Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="d2.jpg" 
+                         alt="Hard Disk Drives" 
+                         class="product-image">
+                    <div class="product-info">
+                        <h3>Hard Disk Drives (HDD)</h3>
+                        <p>Reliable storage solutions with capacities from 500GB to 8TB for all your data needs.</p>
+                        <div class="product-price">From $49.99</div>
+                        <a href="https://wa.me/255753704585?text=I'm%20interested%20in%20your%20hard%20disk%20drives" 
+                           class="whatsapp-btn" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> Inquire Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="d1.jpg" 
+                         alt="Solid State Drives" 
+                         class="product-image">
+                    <div class="product-info">
+                        <h3>Solid State Drives (SSD)</h3>
+                        <p>Blazing fast SSDs with capacities from 256GB to 4TB for improved performance.</p>
+                        <div class="product-price">From $79.99</div>
+                        <a href="https://wa.me/255753704585?text=I'm%20interested%20in%20your%20solid%20state%20drives" 
+                           class="whatsapp-btn" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> Inquire Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="a1.png" 
+                         alt="Computer Accessories" 
+                         class="product-image">
+                    <div class="product-info">
+                        <h3>Computer Accessories</h3>
+                        <p>Keyboards, mice, webcams, and other essential computer peripherals.</p>
+                        <div class="product-price">From $14.99</div>
+                        <a href="https://wa.me/255753704585?text=I'm%20interested%20in%20your%20computer%20accessories" 
+                           class="whatsapp-btn" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i> Inquire Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="description">
+                <h2>Why Choose Our Electronics?</h2>
+                <ul>
+                    <li><strong>Premium Quality:</strong> All products are from reputable brands with warranties</li>
+                    <li><strong>Competitive Pricing:</strong> Affordable prices without compromising quality</li>
+                    <li><strong>Fast Delivery:</strong> Quick shipping options available</li>
+                    <li><strong>Expert Support:</strong> Technical assistance for all your questions</li>
+                    <li><strong>Secure Payments:</strong> Multiple safe payment options</li>
+                </ul>
+                
+                <p style="margin-top: 2rem;">Contact us today to discuss your electronics needs or to get personalized recommendations for your setup.</p>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Contact us anytime via WhatsApp for electronics inquiries</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/mwiba al-hajj/"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/mwibadesign/"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>© 2025 MD | Mwiba Design. All rights reserved</p>
+            <p style="margin-top: 15px; font-size: 0.9rem;">This site uses Google AdSense to provide free services</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/255753704585?text=Hello%20MD%20Design,%20I%20have%20a%20question%20about%20your%20electronics%20products" 
+       class="whatsapp-float" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            document.getElementById('mainNav').classList.toggle('active');
+        }
+
+        // Initialize AdSense
+        (function() {
+            // Initialize all ad units
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            console.log('AdSense units initialized');
+        })();
+    </script>
+</body>
+</html>
