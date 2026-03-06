@@ -621,6 +621,51 @@
             (adsbygoogle = window.adsbygoogle || []).push({});
             console.log('AdSense units initialized');
         })();
+
+         //  <!-- MD Analytics Tracking Code -->
+
+(function() {
+  var MDA_PROJECT = "d3497d06-40cc-46b2-af32-4e4ccc8d3dd8";
+  var MDA_KEY = "9338fa96dbfcdb253a47999a22a2b28f8a2a5ef4b20a7278b3b68c06fe9f2abe";
+  var MDA_URL = "https://neidtahkovshktcxlnob.supabase.co/functions/v1/track";
+
+  // Generate or retrieve visitor ID
+  var vid = localStorage.getItem('mda_vid');
+  if (!vid) { vid = 'v_' + Math.random().toString(36).substr(2, 9) + Date.now(); localStorage.setItem('mda_vid', vid); }
+
+  // Generate session ID
+  var sid = 's_' + Math.random().toString(36).substr(2, 9) + Date.now();
+
+  function send(eventName, data) {
+    fetch(MDA_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': MDA_KEY },
+      body: JSON.stringify({
+        project_id: MDA_PROJECT,
+        visitor_id: vid,
+        session_id: sid,
+        event_name: eventName,
+        event_data: data
+      })
+    }).catch(function() {});
+  }
+
+  // Track pageview
+  send('pageview', {
+    url: window.location.href,
+    title: document.title,
+    referrer: document.referrer,
+    screen: screen.width + 'x' + screen.height
+  });
+
+  // Track when user leaves
+  window.addEventListener('beforeunload', function() {
+    send('session_end', { duration: Math.round((Date.now() - performance.timing.navigationStart) / 1000) });
+  });
+})();
+
+    
     </script>
 </body>
+
 </html>
